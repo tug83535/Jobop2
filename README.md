@@ -48,6 +48,35 @@ Built by someone who used it to evaluate 740+ job offers, generate 100+ tailored
 | **Dashboard TUI** | Terminal UI to browse, filter, and sort your pipeline |
 | **Human-in-the-Loop** | AI evaluates and recommends, you decide and act. The system never submits an application -- you always have the final call |
 | **Pipeline Integrity** | Automated merge, dedup, status normalization, health checks |
+| **Production Automation Engine** | Resume parsing, ATS source adapters, scoring, tailored drafts, review packages, safety controls, JSONL tracking, and tests |
+
+## Production Job-Automation Engine
+
+This fork includes a production-quality automation layer under `src/jobops/` with a CLI at `bin/job-automation.mjs`.
+
+It is intentionally human-in-the-loop:
+
+- Discovers jobs from official/public feeds such as Greenhouse, Lever, Ashby, and local seed files
+- Parses your resume into structured evidence
+- Scores jobs against target titles, skills, location, seniority, and red flags
+- Generates tailored resume drafts, cover letters, common application answers, and submission checklists
+- Tracks application state in a local JSONL audit trail
+- Blocks automated submission, CAPTCHA bypass, and constrained-platform automation by default
+
+Start here:
+
+```bash
+cp config/automation.example.json config/automation.json
+npm run jobops -- doctor --config config/automation.json
+npm run jobops -- run --config config/automation.json --limit 10
+```
+
+Full docs:
+
+- [Production system](docs/AUTOMATION_SYSTEM.md)
+- [Safety and compliance controls](docs/SAFETY_AND_COMPLIANCE.md)
+- [Research notes](docs/RESEARCH_NOTES.md)
+- [Roadmap](docs/ROADMAP.md)
 
 ## Quick Start
 
@@ -92,7 +121,7 @@ Career-ops is a single slash command with multiple modes:
 /career-ops pdf            → Generate ATS-optimized CV
 /career-ops batch          → Batch evaluate multiple offers
 /career-ops tracker        → View application status
-/career-ops apply          → Fill application forms with AI
+/career-ops apply          → Prepare answers while you fill the form manually
 /career-ops pipeline       → Process pending URLs
 /career-ops contacto       → LinkedIn outreach message
 /career-ops deep           → Deep company research

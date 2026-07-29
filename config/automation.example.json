@@ -1,0 +1,80 @@
+{
+  "$schema": "../schemas/automation-config.schema.json",
+  "candidate": {
+    "resume_path": "examples/cv-example.md",
+    "target_titles": [
+      "Senior ML Engineer",
+      "AI Platform Lead",
+      "MLOps Engineer",
+      "Solutions Architect"
+    ],
+    "target_locations": [
+      "Remote",
+      "New York",
+      "United States"
+    ],
+    "target_seniority": [
+      "Senior",
+      "Lead",
+      "Manager",
+      "Principal"
+    ],
+    "remote_ok": true,
+    "minimum_score": 4.0,
+    "red_flags": [
+      "unpaid",
+      "commission only",
+      "must relocate immediately"
+    ]
+  },
+  "sources": [
+    {
+      "type": "file",
+      "name": "Example seed jobs",
+      "path": "examples/job-seeds.example.json",
+      "enabled": true
+    },
+    {
+      "type": "greenhouse",
+      "name": "Anthropic",
+      "board": "anthropic",
+      "enabled": false
+    },
+    {
+      "type": "lever",
+      "name": "Vercel",
+      "site": "vercel",
+      "enabled": false
+    },
+    {
+      "type": "ashby",
+      "name": "ElevenLabs",
+      "organization": "elevenlabs",
+      "enabled": false
+    }
+  ],
+  "limits": {
+    "max_jobs_per_source": 50,
+    "max_review_packages": 10
+  },
+  "generation": {
+    "cover_letter_words": 260,
+    "allow_llm": false,
+    "llm_provider": "manual_review_first"
+  },
+  "safety": {
+    "require_human_review": true,
+    "block_submissions": true,
+    "never_solve_captcha": true,
+    "respect_robots_txt": true,
+    "blocked_sources": [
+      "linkedin",
+      "indeed",
+      "workday"
+    ]
+  },
+  "tracking": {
+    "path": "data/job-automation/applications.jsonl",
+    "review_dir": "output/review-packages"
+  }
+}

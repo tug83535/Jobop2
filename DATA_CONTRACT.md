@@ -10,11 +10,13 @@ These files contain your personal data, customizations, and work product. Update
 |------|---------|
 | `cv.md` | Your CV in markdown |
 | `config/profile.yml` | Your identity, targets, comp range |
+| `config/automation.json` | Your private automation config, target roles, source toggles |
 | `modes/_profile.md` | Your archetypes, narrative, negotiation scripts |
 | `article-digest.md` | Your proof points from portfolio |
 | `interview-prep/story-bank.md` | Your accumulated STAR+R stories |
 | `portals.yml` | Your customized company list |
 | `data/applications.md` | Your application tracker |
+| `data/job-automation/*` | Automation tracker, parsed resume, discovered jobs, scoring exports |
 | `data/pipeline.md` | Your URL inbox |
 | `data/scan-history.tsv` | Your scan history |
 | `reports/*` | Your evaluation reports |
@@ -43,11 +45,16 @@ These files contain system logic, scripts, templates, and instructions that impr
 | `modes/training.md` | Training evaluation instructions |
 | `modes/de/*` | German language modes |
 | `CLAUDE.md` | Agent instructions |
+| `bin/job-automation.mjs` | Job automation CLI |
+| `src/jobops/*` | Resume parsing, source adapters, scoring, materials, safety policy |
 | `*.mjs` | Utility scripts |
 | `batch/batch-prompt.md` | Batch worker prompt |
 | `batch/batch-runner.sh` | Batch orchestrator |
 | `dashboard/*` | Go TUI dashboard |
 | `templates/*` | Base templates |
+| `config/automation.example.json` | Automation config template |
+| `schemas/*` | Machine-readable config schemas |
+| `tests/*` | Automated tests and fixtures |
 | `fonts/*` | Self-hosted fonts |
 | `.claude/skills/*` | Skill definitions |
 | `docs/*` | Documentation |

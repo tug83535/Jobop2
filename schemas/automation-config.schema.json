@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://career-ops.local/schemas/automation-config.schema.json",
+  "title": "Career-Ops Job Automation Config",
+  "type": "object",
+  "required": ["candidate", "sources", "safety", "tracking"],
+  "properties": {
+    "candidate": {
+      "type": "object",
+      "required": ["resume_path", "target_titles", "minimum_score"],
+      "properties": {
+        "resume_path": { "type": "string" },
+        "target_titles": { "type": "array", "items": { "type": "string" } },
+        "target_locations": { "type": "array", "items": { "type": "string" } },
+        "target_seniority": { "type": "array", "items": { "type": "string" } },
+        "remote_ok": { "type": "boolean" },
+        "minimum_score": { "type": "number", "minimum": 1, "maximum": 5 },
+        "red_flags": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "name"],
+        "properties": {
+          "type": { "enum": ["file", "greenhouse", "lever", "ashby"] },
+          "name": { "type": "string" },
+          "path": { "type": "string" },
+          "board": { "type": "string" },
+          "site": { "type": "string" },
+          "organization": { "type": "string" },
+          "api": { "type": "string" },
+          "enabled": { "type": "boolean" }
+        }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "required": ["require_human_review", "block_submissions", "never_solve_captcha"],
+      "properties": {
+        "require_human_review": { "type": "boolean", "const": true },
+        "block_submissions": { "type": "boolean", "const": true },
+        "never_solve_captcha": { "type": "boolean", "const": true },
+        "respect_robots_txt": { "type": "boolean" },
+        "blocked_sources": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "tracking": {
+      "type": "object",
+      "required": ["path", "review_dir"],
+      "properties": {
+        "path": { "type": "string" },
+        "review_dir": { "type": "string" }
+      }
+    }
+  }
+}
+

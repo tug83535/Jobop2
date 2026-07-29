@@ -1,0 +1,22 @@
+{
+  "jobs": [
+    {
+      "id": "fit",
+      "company": "Acme AI",
+      "title": "Senior RevOps Automation Lead",
+      "location": "Remote - United States",
+      "url": "https://acme.example/jobs/fit",
+      "apply_url": "https://acme.example/jobs/fit/apply",
+      "description": "Lead Salesforce automation, SQL reporting, data quality, workflow design, stakeholder management, and AI operations improvements."
+    },
+    {
+      "id": "miss",
+      "company": "Mobile Co",
+      "title": "Junior iOS Engineer",
+      "location": "On-site - Berlin",
+      "url": "https://mobile.example/jobs/miss",
+      "apply_url": "https://mobile.example/jobs/miss/apply",
+      "description": "Build iOS and Android applications with Swift, Kotlin, and App Store release management."
+    }
+  ]
+}
