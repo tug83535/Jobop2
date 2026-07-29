@@ -71,6 +71,23 @@ node cv-sync-check.mjs      # Check configuration
 node verify-pipeline.mjs     # Check pipeline integrity
 ```
 
+## Production Job-Automation Engine
+
+The testable automation engine lives in `src/jobops/` and uses `bin/job-automation.mjs`.
+
+```bash
+cp config/automation.example.json config/automation.json
+# Edit config/automation.json and point candidate.resume_path to your resume
+
+npm run jobops -- doctor --config config/automation.json
+npm run jobops -- parse-resume --resume cv.md --out data/job-automation/resume.json
+npm run jobops -- discover --config config/automation.json --out data/job-automation/discovered.json
+npm run jobops -- score --config config/automation.json --jobs data/job-automation/discovered.json --out data/job-automation/scored.json
+npm run jobops -- prepare --config config/automation.json --jobs data/job-automation/discovered.json --limit 5
+```
+
+This prepares review packages in `output/review-packages/`. It does not submit applications or bypass platform protections. See [AUTOMATION_SYSTEM.md](AUTOMATION_SYSTEM.md) and [SAFETY_AND_COMPLIANCE.md](SAFETY_AND_COMPLIANCE.md).
+
 ## Build Dashboard (Optional)
 
 ```bash

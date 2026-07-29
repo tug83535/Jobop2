@@ -34,6 +34,23 @@
                     └──────────────────────┘
 ```
 
+## Production Automation Engine
+
+The production automation layer is a testable Node.js subsystem separate from the Claude mode prompts:
+
+```text
+src/jobops/resume.mjs     -> parse resume files into verified candidate facts
+src/jobops/sources.mjs    -> discover jobs from Greenhouse, Lever, Ashby, or local seed files
+src/jobops/scorer.mjs     -> score jobs against resume evidence and preferences
+src/jobops/materials.mjs  -> generate human-review packages
+src/jobops/tracker.mjs    -> update JSONL application status history
+src/jobops/safety.mjs     -> block constrained platforms and automated submission
+bin/job-automation.mjs    -> CLI entrypoint
+```
+
+The engine writes private runtime data to gitignored `data/job-automation/` and `output/review-packages/`.
+It never submits applications. The handoff artifact is a review package for the user to inspect and submit manually.
+
 ## Evaluation Flow (Single Offer)
 
 1. **Input**: User pastes JD text or URL

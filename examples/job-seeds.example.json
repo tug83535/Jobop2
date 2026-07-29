@@ -1,0 +1,22 @@
+{
+  "jobs": [
+    {
+      "id": "example-001",
+      "company": "Example AI",
+      "title": "Senior AI Platform Lead",
+      "location": "Remote - United States",
+      "url": "https://example.com/jobs/ai-platform-lead",
+      "apply_url": "https://example.com/jobs/ai-platform-lead/apply",
+      "description": "Lead MLOps platform development for production machine learning systems. Experience with Python, Kubernetes, MLflow, feature stores, CI/CD, model monitoring, AWS, and stakeholder management is valued."
+    },
+    {
+      "id": "example-002",
+      "company": "Example Lab",
+      "title": "Junior Mobile Engineer",
+      "location": "On-site - Berlin",
+      "url": "https://example.com/jobs/mobile-engineer",
+      "apply_url": "https://example.com/jobs/mobile-engineer/apply",
+      "description": "Build iOS and Android features for a consumer app. Requires Swift, Kotlin, and mobile release experience."
+    }
+  ]
+}

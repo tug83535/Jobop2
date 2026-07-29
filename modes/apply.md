@@ -2,6 +2,14 @@
 
 Modo interactivo para cuando el candidato está rellenando un formulario de aplicación en Chrome. Lee lo que hay en pantalla, carga el contexto previo de la oferta, y genera respuestas personalizadas para cada pregunta del formulario.
 
+## Guardrails
+
+- El candidato siempre revisa, copia, pega y envia manualmente.
+- No enviar aplicaciones automaticamente.
+- No resolver CAPTCHAs ni intentar saltar protecciones anti-bot.
+- No automatizar actividad en plataformas que lo prohiben por terminos.
+- Las respuestas generadas son borradores y deben verificarse contra `cv.md`.
+
 ## Requisitos
 
 - **Mejor con Playwright visible**: En modo visible, el candidato ve el navegador y Claude puede interactuar con la página.
